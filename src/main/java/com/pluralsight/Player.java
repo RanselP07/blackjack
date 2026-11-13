@@ -5,8 +5,6 @@ import java.util.Scanner;
 public class Player {
 
     public static String[] name(Scanner myScanner) {
-        System.out.println("");
-
         String[] name = new String[2];
 
         for (int i = 0; i < 2; i++) {
