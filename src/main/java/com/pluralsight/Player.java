@@ -9,17 +9,20 @@ public class Player {
         String input = "";
         int names = 0;
 
-        System.out.print("Enter the number of players: ");
-        input = myScanner.nextLine();
-        names = Integer.parseInt(input);
-
         do {
-            if (names > 0){
-                done = true;
-            } else {
-                System.out.print("Try again: ");
+            try {
+                System.out.print("Enter the number of players: ");
                 input = myScanner.nextLine();
                 names = Integer.parseInt(input);
+
+                if (names > 1){
+                    done = true;
+                } else {
+                    System.out.print("2 or more player, try again: ");
+                    input = myScanner.nextLine();
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input, it has to be a integer!");
             }
 
         }while (!done);
